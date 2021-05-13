@@ -11,7 +11,9 @@ const Handler = async (req,res) => {
         const data = req.body;
 
         try {
-            const client = await MongoClient.connect('mongodb+srv://aman001:aman28@mycluster.o3hq5.mongodb.net/nextjs?retryWrites=true&w=majority');
+            const client = await MongoClient.connect('mongodb+srv://aman001:aman28@mycluster.o3hq5.mongodb.net/nextjs?retryWrites=true&w=majority',{
+                useUnifiedTopology:true
+            });
 
             const connectDB = client.db();
 
